@@ -63,7 +63,7 @@ class ChainedModelChoiceField(ModelChoiceField):
     if django.VERSION >= (5, 0):
         choices = property(_get_choices, ChoiceField.choices)
     else:
-        choices = property(_get_choices, ChoiceField._set_choices)
+        choices = property(_get_choices, ChoiceField.choices)
 
 
 class ChainedManyToManyField(ModelMultipleChoiceField):
@@ -150,4 +150,4 @@ class GroupedModelSelect(ModelChoiceField):
     if django.VERSION >= (5, 0):
         choices = property(_get_choices, ChoiceField.choices)
     else:
-        choices = property(_get_choices, ChoiceField._set_choices)
+        choices = property(_get_choices, ChoiceField.choices)
